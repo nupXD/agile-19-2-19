@@ -1,0 +1,42 @@
+<img src="../assets/images/admin_panel.png" alt="admin_panel_icon" width="100" height="100">
+<div style="float: right">
+    <p class="lead mb-3 mt-2" style="float: right">Welcome <%= user.name %></p>
+    <p><a href="/users/logout" class="btn btn-primary">Logout</a></p>
+</div>
+<h1 class="mt-4">Admin Panel</h1>
+<h3 class="mt-2">Packages</h3>
+<ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+<h3 class="text-primary"><i class="fas fa-plus"></i> add packages</h3>
+
+<!-- add packages modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    setUp Packages
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Packages Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>To Include all packages details after complete database design and development</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">add Package</button>
+            </div>
+        </div>
+    </div>
+    </di <!-- add packages modal -->
