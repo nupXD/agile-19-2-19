@@ -4,14 +4,86 @@
     <p><a href="/users/logout" class="btn btn-primary">Logout</a></p>
 </div>
 <h1 class="mt-4">Admin Panel</h1>
+
+<!-- add user stories modal  -->
+<h3 class="text-secondary"><i class="fas fa-plus"></i> add testimonials</h3>
+<!-- add packages modal -->
+<!-- testimonials trigger modal -->
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalStories">
+    setUp Stories
+</button>
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModalStories" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Packages Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- add packages form details -->
+                <div class="card card-body">
+                    <!-- <% include ./partials/messages %> -->
+                    <form action="/packages/add" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+                                value="<%= typeof name != 'undefined' ? name : '' %>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">What he/she has</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+                                value="<%= typeof email != 'undefined' ? email : '' %>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control"
+                                placeholder="Create Password"
+                                value="<%= typeof password != 'undefined' ? password : '' %>" />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            addStories
+                        </button>
+                    </form>
+                </div>
+
+                <!-- end of add stories-->
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end of add user stories modal -->
+
+
+
+
+
+
+
+
+
+
+
+<br>
 <h3 class="mt-2">Packages</h3>
-<ul class="list-group">
+<!-- <ul class="list-group">
     <li class="list-group-item">Cras justo odio</li>
     <li class="list-group-item">Dapibus ac facilisis in</li>
     <li class="list-group-item">Morbi leo risus</li>
     <li class="list-group-item">Porta ac consectetur ac</li>
     <li class="list-group-item">Vestibulum at eros</li>
-</ul>
+</ul> -->
+
 <h3 class="text-primary"><i class="fas fa-plus"></i> add packages</h3>
 
 <!-- add packages modal -->
@@ -31,12 +103,46 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>To Include all packages details after complete database design and development</p>
+
+                <!-- add packages form details -->
+                <div class="card card-body">
+                    <!-- <% include ./partials/messages %> -->
+                    <form action="/packages/add" method="POST">
+                        <div class="form-group">
+                            <label for="name">Package Title</label>
+                            <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+                                value="<%= typeof name != 'undefined' ? name : '' %>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+                                value="<%= typeof email != 'undefined' ? email : '' %>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control"
+                                placeholder="Create Password"
+                                value="<%= typeof password != 'undefined' ? password : '' %>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password2">Confirm Password</label>
+                            <input type="password" id="password2" name="password2" class="form-control"
+                                placeholder="Confirm Password"
+                                value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            addPackages
+                        </button>
+                    </form>
+                </div>
+
+                <!-- end of add packages details -->
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">add Package</button>
+                <button type="button" class="btn btn-primary">Reset</button>
             </div>
         </div>
     </div>
-    </di <!-- add packages modal -->
+</div> <!-- add packages modal -->
