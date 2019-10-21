@@ -13,12 +13,12 @@ const packageSchema = new mongoose.Schema({
         required: true
     },
     extra_price_details: {
-        type: Date,
-        default: Date.now
+        type: String,
+        required: true
     },
     ps_detail: {
         type: String,
-        required: false
+        required: true
     },
     transportation_details: {
         type: String,
