@@ -23,7 +23,10 @@ const packageSchema = new mongoose.Schema({
     transportation_details: {
         type: String,
         required: true
-    }
+    },
+
+}, {
+    timestamps: true
 });
 const Package = mongoose.model('Package', packageSchema);
 module.exports = Package;

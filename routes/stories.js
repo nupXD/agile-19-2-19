@@ -7,6 +7,24 @@ const Stories = require('../models/stories.js');
 router.get('/add', (req, res) => res.render('addStories'));
 
 
+//view user stories route
+router.get('/view', (req, res) => {
+    Stories.find({})
+        .sort({
+            createdAt: 1
+        })
+        .then(
+            Stories => {
+                res.render('viewStories', {
+                    Stories: Stories
+                });
+            },
+            err => next(err)
+        )
+        .catch(err => next(err));
+});
+
+
 //add packages routes
 router.post('/add', (req, res) => {
     const {
@@ -33,9 +51,16 @@ router.post('/add', (req, res) => {
         Stories.create(req.body)
             .then(
                 hero => {
-                    res.statusCode = 200;
-                    res.setHeader("Content-Type", "application/json");
-                    res.json(hero);
+                    // res.statusCode = 200;
+                    // res.setHeader("Content-Type", "application/json");
+                    // res.json(hero);
+
+                    req.flash(
+                        'success_msg',
+                        'Testimonial Added !'
+                    );
+                    res.redirect('/stories/add');
+
                 },
                 err => next(err)
             )

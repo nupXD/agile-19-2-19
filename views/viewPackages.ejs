@@ -1,0 +1,39 @@
+<div class="card col-4 mb-3 mt-3">
+    <h3 class="card-header">Travel Package</h3>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+    </div>
+    <img style="height: 200px; width: 100%; display: block; opacity: 0.4" src="../assets/images/scenary.png"
+        alt="Card image">
+    <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-footer text-muted">
+        2 days ago
+    </div>
+</div>
+
+<% Packages.forEach(function(package) { %>
+<blockquote class="blockquote text-center mb-3 mt-3">
+    <p class="mb-0"><%= package._id %></p>
+    <footer class="blockquote-footer"> <span class="text-primary"><%= package.title %></span><br>
+        <cite title="Source Title" class="text-lead"><%= package.description %></cite></footer>
+    <footer class="blockquote-footer"> <span class="text-primary"><%= package.total_price %></span><br>
+        <cite title="Source Title" class="text-lead"><%= package.transportation_details %></cite></footer>
+    <footer class="blockquote-footer"> <span class="text-primary"><%= package.extra_price_details %></span><br>
+        <cite title="Source Title" class="text-lead"><%= package.ps_details %></cite></footer>
+</blockquote>
+
+
+<% } );%>

@@ -1,0 +1,10 @@
+<% Stories.forEach(function(story) { %>
+
+<blockquote class="blockquote text-center mb-3 mt-3">
+    <p class="mb-0"><%= story.story_description %></p>
+    <footer class="blockquote-footer"> <span class="text-primary"><%= story.fullname %></span><br>
+        <cite title="Source Title" class="text-lead"><%= story.location %></cite></footer>
+</blockquote>
+
+
+<% } );%>

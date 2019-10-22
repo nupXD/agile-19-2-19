@@ -1,27 +1,36 @@
 const express = require('express');
 const router = express.Router();
-
 const Packages = require('../models/packages.js');
-
 
 //get packages route
 router.get('/add', (req, res) => res.render('addPackages'));
 
-
 //view packages route
 router.get('/view', (req, res) => {
-    res.write("View all Packages Routes");
-});
+    Packages.find({})
+        .sort({
+            createdAt: 1
+        })
+        .then(
+            Packages => {
+                // res.statusCode = 200;
+                // res.setHeader("Content-Type", "application/json");
+                // res.json(Survey);
+                res.render('viewPackages', {
+                    Packages: Packages
+                });
 
+            },
+            err => next(err)
+        )
+        .catch(err => next(err));
+});
 
 // edit packages route / get details about a package
-router.put('/edit{id}', (req, res) => {
-
-
-
+router.get('/edit/{id}', (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.json(req.params.id);
 });
-
-
 
 //add packages routes
 router.post('/add', (req, res) => {
@@ -55,9 +64,15 @@ router.post('/add', (req, res) => {
         Packages.create(req.body)
             .then(
                 hero => {
-                    res.statusCode = 200;
-                    res.setHeader("Content-Type", "application/json");
-                    res.json(hero);
+                    // res.statusCode = 200;
+                    // res.setHeader("Content-Type", "application/json");
+                    // res.json(hero);
+
+                    req.flash(
+                        'success_msg',
+                        'Package Added, You can view your package !'
+                    );
+                    res.redirect('/packages/add');
                 },
                 err => next(err)
             )

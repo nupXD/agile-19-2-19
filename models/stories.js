@@ -12,6 +12,8 @@ const storiesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+}, {
+    timestamps: true
 });
 const Stories = mongoose.model('Stories', storiesSchema);
 module.exports = Stories;
