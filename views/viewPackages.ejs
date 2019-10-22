@@ -1,39 +1,68 @@
-<div class="card col-4 mb-3 mt-3">
-    <h3 class="card-header">Travel Package</h3>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-    </div>
-    <img style="height: 200px; width: 100%; display: block; opacity: 0.4" src="../assets/images/scenary.png"
-        alt="Card image">
-    <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-    </div>
-    <div class="card-footer text-muted">
-        2 days ago
-    </div>
-</div>
+<link rel="stylesheet" href="../assets/css/style.css">
+<%# package.description %>
+<%# package.transportation_details %>
+<%# package.extra_price_details %>
+<section class="section-tours">
+    <div class="row">
+        <% Packages.forEach(function(package) { %>
+        <div class="col-1-of-3" style="margin-bottom: 2em;">
+            <div class="card">
+                <div class="card__side card__side--front">
+                    <div class="card__picture card__picture--1">
+                        <img src="../assets/images/scenary.png" alt="travel_image" style="opacity: .5;">
 
-<% Packages.forEach(function(package) { %>
-<blockquote class="blockquote text-center mb-3 mt-3">
-    <p class="mb-0"><%= package._id %></p>
-    <footer class="blockquote-footer"> <span class="text-primary"><%= package.title %></span><br>
-        <cite title="Source Title" class="text-lead"><%= package.description %></cite></footer>
-    <footer class="blockquote-footer"> <span class="text-primary"><%= package.total_price %></span><br>
-        <cite title="Source Title" class="text-lead"><%= package.transportation_details %></cite></footer>
-    <footer class="blockquote-footer"> <span class="text-primary"><%= package.extra_price_details %></span><br>
-        <cite title="Source Title" class="text-lead"><%= package.ps_details %></cite></footer>
-</blockquote>
+                    </div>
+                    <h4 class="card__heading">
+                        <span class="card__heading-span card__heading-span--1">
+                            <%=package.title%>
+                        </span>
+                    </h4>
+                    <div class="card__details">
+                        <ul>
+                            <li><span style="font-weight: 900;font-style: oblique;"
+                                    class="navigation__link"><%=package.ps_detail%></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card__side card__side--back card__side--back-1">
+                    <div class="card__cta">
+                        <div class="card__price-box">
+                            <p class="card__price-only">Only</p>
+                            <p class="card__price-value">Rs.<%=package.total_price%>
+                            </p>
+                        </div>
+                        <a href="#<%= package._id %>" class="btn btn--white">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-<% } );%>
+        <div class="popup" id="<%= package._id %>">
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src="../assets/images/scenary.png" alt="Tour" class="popup__img" />
+                    <img src="../assets/images/scenary.png" alt="Tour" class="popup__img" />
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">
+                        Start booking now
+                    </h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        Important &ndash; Please read the details before booking
+                    </h3>
+                    <p class="popup__text">
+                        <%= package.description %>
+                        <br>
+                        <%= package.transportation_details %>
+                        <br>
+                        <%= package.extra_price_details %>
+                    </p>
+                    <a href="#" class="btn btn--green">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <% } )%>
+    </div>
+</section>
