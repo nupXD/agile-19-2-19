@@ -1,0 +1,56 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3"><i class="fas fa-plus"> </i> Add Packages</h1>
+            <% include ./partials/messages %>
+            <form action="/packages/add" method="POST">
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Enter Title" />
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" class="form-control"
+                        placeholder="Enter Description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="total_price">Total Price</label>
+                    <input type="number" id="total_price" name="total_price" class="form-control"
+                        placeholder="Enter Total Price" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="extra_price_details">Extra Price Details</label>
+                    <textarea id="extra_price_details" name="extra_price_details" class="form-control"
+                        placeholder="Enter Extra Price Details"></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="ps_detail">Extra Information</label>
+                    <textarea id="ps_detail" name="ps_detail" class="form-control"
+                        placeholder="Extra Information"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="transportation_details">Transportation Information</label>
+                    <textarea id="transportation_details" name="transportation_details" class="form-control"
+                        placeholder="Transportation Information"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Add Package</button>
+            </form>
+            <p class="lead mt-4">
+                <a href="/packages/view">View Packages Details</a>
+                <br>
+                <a href="/stories/add">Add Stories</a>
+                <br>
+                <a href="/dashboard">Go to Dashboard</a>
+            </p>
+        </div>
+    </div>
+</div>
