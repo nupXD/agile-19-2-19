@@ -1,3 +1,8 @@
+<% if (!user) {%>
+<p>Not Authorized</p>
+<% }  else { %>
+<p>Authorized</p>
+<% } %>
 <link rel="stylesheet" href="../assets/css/style.css">
 <%# package.description %>
 <%# package.transportation_details %>
@@ -41,8 +46,8 @@
         <div class="popup" id="<%= package._id %>">
             <div class="popup__content">
                 <div class="popup__left">
-                    <img src="../assets/images/scenary.png" alt="Tour" class="popup__img" />
-                    <img src="../assets/images/scenary.png" alt="Tour" class="popup__img" />
+                    <p style="text-align: center;">Contact : xxxx-xxxx-xx</p>
+                    <p style="text-align: center;">Email: placeholder@gmail.com</p>
                 </div>
                 <div class="popup__right">
                     <a href="#section-tours" class="popup__close">&times;</a>

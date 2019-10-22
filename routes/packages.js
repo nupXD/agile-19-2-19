@@ -17,7 +17,8 @@ router.get('/view', (req, res) => {
                 // res.setHeader("Content-Type", "application/json");
                 // res.json(Survey);
                 res.render('viewPackages', {
-                    Packages: Packages
+                    Packages: Packages,
+                    user: req.user
                 });
 
             },
@@ -31,6 +32,7 @@ router.get('/edit/{id}', (req, res) => {
     res.setHeader("Content-Type", "application/json");
     res.json(req.params.id);
 });
+
 
 //add packages routes
 router.post('/add', (req, res) => {
