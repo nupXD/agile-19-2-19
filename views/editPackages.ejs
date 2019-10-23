@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css" />
+
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3"><i class="fas fa-plus"> </i> Edit Packages</h1>
+            <% include ./partials/messages %>
+            <input type="text" style="visibility: hidden;" value="<%=package_id %>" id="hidden_for_id">
+            <form id="from-edit-package" action="/packages/edit/<%=package_id %>" method="POST">
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Enter Title"
+                        value="<%= package_details.title %>" />
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" class="form-control"
+                        placeholder="Enter Description"><%= package_details.description %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="total_price">Total Price</label>
+                    <input type="number" id="total_price" name="total_price" class="form-control"
+                        placeholder="Enter Total Price" value="<%= package_details.total_price %>" />
+                </div>
+
+
+                <div class="form-group">
+                    <label for="extra_price_details">Extra Price Details</label>
+                    <textarea id="extra_price_details" name="extra_price_details" class="form-control"
+                        placeholder="Enter Extra Price Details"><%= package_details.extra_price_details %></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="ps_detail">Extra Information</label>
+                    <textarea id="ps_detail" name="ps_detail" class="form-control"
+                        placeholder="Extra Information"><%= package_details.ps_detail %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="transportation_details">Transportation Information</label>
+                    <textarea id="transportation_details" name="transportation_details" class="form-control"
+                        placeholder="Transportation Information"><%= package_details.transportation_details %></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Update</button>
+            </form>
+            <p class="lead mt-4">
+                <a href="/packages/view">View Packages Details</a>
+                <br>
+                <a href="/stories/add">Add Stories</a>
+                <br>
+                <a href="/dashboard">Go to Dashboard</a>
+            </p>
+        </div>
+    </div>
+</div>

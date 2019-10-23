@@ -1,8 +1,3 @@
-<% if (!user) {%>
-<p>Not Authorized</p>
-<% }  else { %>
-<p>Authorized</p>
-<% } %>
 <link rel="stylesheet" href="../assets/css/style.css">
 <%# package.description %>
 <%# package.transportation_details %>
@@ -23,11 +18,8 @@
                         </span>
                     </h4>
                     <div class="card__details">
-                        <ul>
-                            <li><span style="font-weight: 900;font-style: oblique;"
-                                    class="navigation__link"><%=package.ps_detail%></span>
-                            </li>
-                        </ul>
+                        <span class="navigation__link badge badge-secondary"
+                            style="font-size: 15px;word-wrap: break-word;"><%=package.ps_detail%></span>
                     </div>
                 </div>
                 <div class="card__side card__side--back card__side--back-1">
@@ -38,6 +30,13 @@
                             </p>
                         </div>
                         <a href="#<%= package._id %>" class="btn btn--white">Book Now</a>
+
+                        <% if (!user) {%>
+
+                        <% }  else { %>
+                        <a href="/packages/view/<%= package._id %>" class="btn btn--white">Update</a>
+                        <% } %>
+
                     </div>
                 </div>
             </div>
@@ -46,9 +45,39 @@
         <div class="popup" id="<%= package._id %>">
             <div class="popup__content">
                 <div class="popup__left">
-                    <p style="text-align: center;">Contact : xxxx-xxxx-xx</p>
-                    <p style="text-align: center;">Email: placeholder@gmail.com</p>
+
+                    <div style="margin:4em;">
+                        <form action="/booking/add" class="form" method="POST">
+                            <% include ./partials/messages %>
+                            <div class="form__group">
+                                <input type="text" name="name" class="form__input" id="name" placeholder="Full Name"
+                                    required>
+                                <label for="name" class="form__label">Full Name</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="email" name="email" class="form__input" id="email"
+                                    placeholder="Email address" required>
+                                <label for="email" class="form__label">Email address</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" name="ph_no" class="form__input" id="ph_no"
+                                    placeholder="Phone Number" required>
+                                <label for="ph_no" class="form__label">Contact No.</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" name="info" class="form__input" id="info"
+                                    placeholder=" Any Extra Enquiry" required value="<%=package.title%>">
+                                <label for="info" class="form__label">Extra Enquiry</label>
+                            </div>
+                            <div class="form__group">
+                                <button class="btn btn--green" type="submit">
+                                    Book Now &rarr;
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+
                 <div class="popup__right">
                     <a href="#section-tours" class="popup__close">&times;</a>
                     <h2 class="heading-secondary u-margin-bottom-small">
@@ -64,10 +93,11 @@
                         <br>
                         <%= package.extra_price_details %>
                     </p>
-                    <a href="#" class="btn btn--green">Book Now</a>
                 </div>
             </div>
         </div>
+
         <% } )%>
+
     </div>
 </section>

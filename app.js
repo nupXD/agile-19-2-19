@@ -70,8 +70,8 @@ app.use('/packages', require('./routes/packages.js'));
 app.use('/stories', require('./routes/stories.js'));
 
 
-
-
+//booking add route
+app.use('/booking', require('./routes/booking.js'));
 
 //end of routes
 

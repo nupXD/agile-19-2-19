@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="../assets/css/style.css">
+<div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">
+            &nbsp;
+        </span>
+    </label>
+    <div class="navigation__background"></div>
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="index.html" class="navigation__link"><span>01</span> Home</a></li>
+            <li class="navigation__item"><a href="packsges.html" class="navigation__link"><span>02</span>Popular
+                    tours</a></li>
+            <li class="navigation__item"><a href="stories.html" class="navigation__link"><span>03</span>Stories</a></li>
+            <li class="navigation__item"><a href="book.html" class="navigation__link"><span>04</span>Book now</a></li>
+            <li class="navigation__item"><a href="" class="navigation__link"><span>05</span> About NeTours</a></li>
+        </ul>
+    </nav>
+</div>
+<header class="header">
+    <div class="header__logo-box">
+        <img src="images/Swas.png" alt="NeTravels" class="header__logo">
+    </div>
+    <div class="header__text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary--main">Nepal</span>
+            <span class="heading-primary--sub">Land of adventures</span>
+        </h1>
+        <a href="#" class="btn btn--white btn--animated">
+            Discover our tours
+        </a>
+    </div>
+</header>
+<main>
+    <section class="">
+        <div class="row">
+            <div class="book">
+                <div class="book__form">
+                    <form action="/booking/add" class="form" method="POST">
+                        <div class="u-margin-bottom-medium">
+                            <h2 class="heading-secondary">
+                                Start Booking Now
+                            </h2>
+                        </div>
+                        <p class="heading-secondary"><% include ./partials/messages %></p>
+                        <div class="form__group">
+                            <input type="text" name="name" class="form__input" id="name" placeholder="Full Name"
+                                required>
+                            <label for="name" class="form__label">Full Name</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" name="email" class="form__input" id="email" placeholder="Email address"
+                                required>
+                            <label for="email" class="form__label">Email address</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="text" name="ph_no" class="form__input" id="ph_no" placeholder="Phone Number"
+                                required>
+                            <label for="ph_no" class="form__label">Contact No.</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="text" name="info" class="form__input" id="info"
+                                placeholder=" Any Extra Enquiry" required>
+                            <label for="info" class="form__label">Extra Enquiry</label>
+                        </div>
+
+                        <div class="form__group">
+                            <button class="btn btn--green" type="submit">
+                                Next Step &rarr;
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__logo-box">
+        <img src="images/SwasW.png" alt="full logo" class="footer__logo">
+    </div>
+    <div class="row">
+        <div class="col-1-of-2">
+            <div class="footer__navigation">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="" class="footer__link">Company</a></li>
+                    <li class="footer__item"><a href="" class="footer__link">Contact us</a></li>
+                    <li class="footer__item"><a href="" class="footer__link">Carrers</a></li>
+                    <li class="footer__item"><a href="" class="footer__link">Privacy policy</a></li>
+                    <li class="footer__item"><a href="" class="footer__link">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-1-of-2">
+            <p class="footer__copyright">
+                Built by <a href="" class="footer__link">Biswash Lamichhane</a> to learn modern HTML and CSS and
+                use SASS and use npm and its package managers.
+            </p>
+        </div>
+    </div>
+</footer>
+<div class="popup" id="popup">
+    <div class="popup__content">
+        <div class="popup__left">
+            <img src="images/nat.jpg" alt="Tour" class="popup__img">
+            <img src="images/nat6.jpg" alt="Tour" class="popup__img">
+        </div>
+        <div class="popup__right">
+            <a href="#section-tours" class="popup__close">&times;</a>
+            <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+            <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before
+                booking</h3>
+            <p class="popup__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum explicabo ab
+                enim iusto consequatur. Deserunt hic, quae mollitia illum, ratione culpa neque perspiciatis eaque
+                ipsum omnis, accusamus nostrum et expedita.Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Nostrum explicabo ab enim iusto consequatur. Deserunt hic, quae mollitia illum, ratione culpa
+                neque perspiciatis eaque ipsum omnis, accusamus nostrum et expedita.Deserunt hic, quae mollitia
+                illum, ratione culpa
+                neque perspiciatis eaque ipsum omnis, accusamus nostrum et expedita.</p>
+            <a href="#" class="btn btn--green">Book Now</a>
+        </div>
+    </div>
+</div>

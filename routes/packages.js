@@ -6,7 +6,7 @@ const Packages = require('../models/packages.js');
 router.get('/add', (req, res) => res.render('addPackages'));
 
 //view packages route
-router.get('/view', (req, res) => {
+router.get('/view', (req, res, next) => {
     Packages.find({})
         .sort({
             createdAt: 1
@@ -27,10 +27,53 @@ router.get('/view', (req, res) => {
         .catch(err => next(err));
 });
 
+
+//get details
+router.get('/view/:id', (req, res, next) => {
+
+    // res.status(200);
+    // res.setHeader("Content-Type", "application/json");
+    // res.json(req.params.id);
+    Packages.findById(req.params.id)
+        .then(
+            package => {
+                res.render('editPackages', {
+                    package_id: req.params.id,
+                    package_details: package
+                });
+
+            },
+            err => next(err)
+        )
+        .catch(err => next(err));
+
+});
+
 // edit packages route / get details about a package
-router.get('/edit/{id}', (req, res) => {
-    res.setHeader("Content-Type", "application/json");
-    res.json(req.params.id);
+router.post('/edit/:id', (req, res, next) => {
+    // res.status(200);
+    // res.setHeader("Content-Type", "application/json");
+    // res.json(req.params.id);
+    Packages.findByIdAndUpdate(
+            req.params.id, {
+                $set: req.body
+            }, {
+                new: true,
+                useFindAndModify: false
+            }
+        )
+        .then(
+            package => {
+
+                req.flash(
+                    'success_msg',
+                    'Package Updated, You can view your package !'
+                );
+                res.redirect('/packages/view/' + req.params.id);
+            },
+            err => next(err)
+        )
+        .catch(err => next(err));
 });
 
 
