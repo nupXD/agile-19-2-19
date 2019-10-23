@@ -87,7 +87,7 @@ router.post('/add', (req, res, next) => {
                         'success_msg',
                         'Booking Recorded ! Be patient, we will contatct you soon !'
                     );
-                    res.redirect('/packages/view');
+                    res.redirect('/booking');
                 },
                 err => next(err)
             )

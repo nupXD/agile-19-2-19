@@ -5,11 +5,336 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Travel and Tours</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/icon-font.css">
+    <link rel="stylesheet" rel="shortcut icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>NeTours</title>
 </head>
 
 <body>
-    <h4>Welcome to Travel and Tour Website! </h4>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">
+                &nbsp;
+            </span>
+        </label>
+        <div class="navigation__background"></div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="index.html" class="navigation__link"><span>01</span> Home</a></li>
+                <li class="navigation__item"><a href="packsges.html" class="navigation__link"><span>02</span>Popular
+                        tours</a></li>
+                <li class="navigation__item"><a href="stories.html" class="navigation__link"><span>03</span>Stories</a>
+                </li>
+                <li class="navigation__item"><a href="book.html" class="navigation__link"><span>04</span>Book now</a>
+                </li>
+                <li class="navigation__item"><a href="" class="navigation__link"><span>05</span> About NeTours</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header class="header">
+        <div class="header__logo-box">
+            <img src="images/Swas.png" alt="NeTravels" class="header__logo">
+        </div>
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary--main">Nepal</span>
+                <span class="heading-primary--sub">Land of adventures</span>
+            </h1>
+            <a href="#" class="btn btn--white btn--animated">
+                Discover our tours
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="section-about">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    Exiting tours for adventurous people!
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        You're going to fall in love with nature.
+                    </h3>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia voluptatibus obcaecati a
+                        magnam vel voluptates ex deserunt quam unde laboriosam sint expedita omnis s molestias!
+                    </p>
+
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        Live like never before.
+                    </h3>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis voluptate amet sed placeat
+                        provident mollitia iure debitis at repudiandae nihil.
+                    </p>
+                    <a href="#" class="btn-text">
+                        Learn more &rarr;
+                    </a>
+                </div>
+                <div class="col-1-of-2">
+                    <div class="composition">
+                        <img src="images/about1.jpg" alt="photo1" class="composition__photo composition__photo--p1">
+                        <img src="images/about2.jpg" alt="photo2" class="composition__photo composition__photo--p2">
+                        <img src="images/about3.jpg" alt="phpto3" class="composition__photo composition__photo--p3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-features">
+            <div class="row">
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-world"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            Explore the world
+                        </h3>
+                        <p class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores praesentium a porro repel
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-compass"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            Meet nature
+                        </h3>
+                        <p class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores praesentium a porro repel
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-map"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            Find your way
+                        </h3>
+                        <p class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores praesentium a porro repel
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-heart"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            Live healthy
+                        </h3>
+                        <p class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores praesentium a porro repel
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-tours">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    Most popular tours
+                </h2>
+            </div>
+            <div class="row">
+                <% Packages.forEach(function(package) { %>
+                <div class="col-1-of-3" style="margin-bottom: 2em;">
+                    <div class="card">
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--1">
+                                <img src="../assets/images/scenary.png" alt="travel_image" style="opacity: .5;">
+
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--1">
+                                    <%=package.title%>
+                                </span>
+                            </h4>
+                            <div class="card__details">
+                                <span class="navigation__link badge badge-secondary"
+                                    style="font-size: 15px;word-wrap: break-word;"><%=package.ps_detail%></span>
+                            </div>
+                        </div>
+                        <div class="card__side card__side--back card__side--back-1">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">Only</p>
+                                    <p class="card__price-value">Rs.<%=package.total_price%>
+                                    </p>
+                                </div>
+                                <a href="#<%= package._id %>" class="btn btn--white">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup" id="<%= package._id %>">
+                    <div class="popup__content">
+                        <div class="popup__left">
+
+                            <div style="margin:4em;">
+                                <form action="/booking/add" class="form" method="POST">
+                                    <% include ./partials/messages %>
+                                    <div class="form__group">
+                                        <input type="text" name="name" class="form__input" id="name"
+                                            placeholder="Full Name" required>
+                                        <label for="name" class="form__label">Full Name</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <input type="email" name="email" class="form__input" id="email"
+                                            placeholder="Email address" required>
+                                        <label for="email" class="form__label">Email address</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <input type="text" name="ph_no" class="form__input" id="ph_no"
+                                            placeholder="Phone Number" required>
+                                        <label for="ph_no" class="form__label">Contact No.</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <input type="text" name="info" class="form__input" id="info"
+                                            placeholder=" Any Extra Enquiry" required value="<%=package.title%>">
+                                        <label for="info" class="form__label">Extra Enquiry</label>
+                                    </div>
+                                    <div class="form__group">
+                                        <button class="btn btn--green" type="submit">
+                                            Book Now &rarr;
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="popup__right">
+                            <a href="#section-tours" class="popup__close">&times;</a>
+                            <h2 class="heading-secondary u-margin-bottom-small">
+                                Start booking now
+                            </h2>
+                            <h3 class="heading-tertiary u-margin-bottom-small">
+                                Important &ndash; Please read the details before booking
+                            </h3>
+                            <p class="popup__text">
+                                <%= package.description %>
+                                <br>
+                                <%= package.transportation_details %>
+                                <br>
+                                <%= package.extra_price_details %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <% } )%>
+            </div>
+            <div class="u-center-text u-margin-top-huge">
+                <a href="#" class="btn btn--green">Discover all tours</a>
+            </div>
+        </section>
+        <section class="section-stories">
+            <div class="bg-video">
+                <video class="bg-video__content" autoplay muted loop>
+                    <source src="images/video.mp4" type="video/mp4">
+                    <source src="images/video.webm" type="video/webm">
+                    Your browser is not supported!
+                </video>
+            </div>
+
+        </section>
+        <section class="section-book">
+            <div class="row">
+                <div class="book">
+                    <div class="book__form">
+                        <form action="/booking/add" class="form" method="POST">
+                            <div class="u-margin-bottom-medium">
+                                <h2 class="heading-secondary">
+                                    Start Booking Now
+                                </h2>
+                            </div>
+                            <p class="heading-secondary"><% include ./partials/messages %></p>
+                            <div class="form__group">
+                                <input type="text" name="name" class="form__input" id="name" placeholder="Full Name"
+                                    required>
+                                <label for="name" class="form__label">Full Name</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="email" name="email" class="form__input" id="email"
+                                    placeholder="Email address" required>
+                                <label for="email" class="form__label">Email address</label>
+                            </div>
+
+                            <div class="form__group">
+                                <input type="text" name="ph_no" class="form__input" id="ph_no"
+                                    placeholder="Phone Number" required>
+                                <label for="ph_no" class="form__label">Contact No.</label>
+                            </div>
+
+                            <div class="form__group">
+                                <input type="text" name="info" class="form__input" id="info"
+                                    placeholder=" Any Extra Enquiry" required>
+                                <label for="info" class="form__label">Extra Enquiry</label>
+                            </div>
+
+                            <div class="form__group">
+                                <button class="btn btn--green" type="submit">
+                                    Next Step &rarr;
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <img src="images/SwasW.png" alt="full logo" class="footer__logo">
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="" class="footer__link">Company</a></li>
+                        <li class="footer__item"><a href="" class="footer__link">Contact us</a></li>
+                        <li class="footer__item"><a href="" class="footer__link">Carrers</a></li>
+                        <li class="footer__item"><a href="" class="footer__link">Privacy policy</a></li>
+                        <li class="footer__item"><a href="" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <p class="footer__copyright">
+                    Built by <a href="" class="footer__link">Biswash Lamichhane</a> to learn modern HTML and CSS and
+                    use SASS and use npm and its package managers.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="images/nat.jpg" alt="Tour" class="popup__img">
+                <img src="images/nat6.jpg" alt="Tour" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <a href="#section-tours" class="popup__close">&times;</a>
+                <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before
+                    booking</h3>
+                <p class="popup__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum explicabo ab
+                    enim iusto consequatur. Deserunt hic, quae mollitia illum, ratione culpa neque perspiciatis eaque
+                    ipsum omnis, accusamus nostrum et expedita.Lorem ipsum dolor sit, amet consectetur adipisicing
+                    elit. Nostrum explicabo ab enim iusto consequatur. Deserunt hic, quae mollitia illum, ratione culpa
+                    neque perspiciatis eaque ipsum omnis, accusamus nostrum et expedita.Deserunt hic, quae mollitia
+                    illum, ratione culpa
+                    neque perspiciatis eaque ipsum omnis, accusamus nostrum et expedita.</p>
+                <a href="#" class="btn btn--green">Book Now</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

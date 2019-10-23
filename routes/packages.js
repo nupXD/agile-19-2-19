@@ -27,7 +27,6 @@ router.get('/view', (req, res, next) => {
         .catch(err => next(err));
 });
 
-
 //get details
 router.get('/view/:id', (req, res, next) => {
 
