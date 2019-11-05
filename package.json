@@ -1,16 +1,12 @@
 {
-  "name": "travelling",
+  "name": "mysite-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Integration testing for mysite v1",
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "cucumber-js"
+    "test": "npx cucumber-js features/homepage.feature npx cucumber-js features/menu.feature npx cucumber-js features/register.feature  npx cucumber-js features/login.feature"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "cucumber": "^5.1.0"
+  "dependencies": {
+    "cucumber": "^5.0.0",
+    "cucumber-mink": "^2.1.1"
   }
 }
