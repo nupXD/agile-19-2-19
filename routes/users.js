@@ -9,10 +9,21 @@ const {
 } = require('../config/auth');
 
 // Login Page
-router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
+router.get('/login', forwardAuthenticated, (req, res) => res.render('login', {
+  user: req.user
+}));
 
 // Register Page
-router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
+// router.get('/register', (req, res) => res.render('register', {
+//   user: req.user
+// }));
+router.get('/register', (req, res) => {
+  if (!req.user) {
+    res.redirect('/');
+  } else {
+    res.render('register');
+  }
+});
 
 // Register
 router.post('/register', (req, res) => {
